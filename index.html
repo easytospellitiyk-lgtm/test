@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Landing PWA — Регистрация</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+
+  <meta name="description" content="Простое PWA-приложение с формой регистрации и Thank You страницей." />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">PWA Landing</div>
+      <nav class="nav">
+        <a href="#features">Преимущества</a>
+        <a href="#form">Регистрация</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero-секция -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Запустите ваш продукт как PWA за один день</h1>
+          <p class="hero-subtitle">
+            Адаптивный лендинг, офлайн‑доступ и установка на главный экран — всё в одном простом приложении.
+          </p>
+          <ul class="hero-benefits">
+            <li>Мгновенная загрузка и офлайн‑режим</li>
+            <li>Установка на смартфон как полноценное приложение</li>
+            <li>Минимальные требования для быстрого запуска</li>
+          </ul>
+        </div>
+        <div class="card" id="form">
+          <h2>Зарегистрируйтесь сейчас</h2>
+          <p class="card-subtitle">Оставьте контакты, и мы свяжемся с вами.</p>
+
+          <form id="registration-form">
+            <label>
+              Имя
+              <input type="text" name="name" required placeholder="Ваше имя" />
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" required placeholder="you@example.com" />
+            </label>
+
+            <label>
+              Телефон
+              <input type="tel" name="phone" placeholder="+7 999 123-45-67" />
+            </label>
+
+            <button type="submit" class="btn-primary">Отправить заявку</button>
+
+            <p class="form-note">
+              Нажимая на кнопку, вы соглашаетесь с обработкой персональных данных.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <h2>Почему PWA</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Быстрый старт</h3>
+            <p>Простая архитектура: одна главная страница, форма и Thank You Page.</p>
+          </div>
+          <div class="feature">
+            <h3>Кроссплатформенность</h3>
+            <p>Работает в браузере, на iOS и Android без публикации в сторах.</p>
+          </div>
+          <div class="feature">
+            <h3>Офлайн‑режим</h3>
+            <p>Благодаря сервис‑воркеру ключевые страницы доступны даже без сети.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 PWA Landing</span>
+      <span>Создано на базе прогрессивного веб‑приложения</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
