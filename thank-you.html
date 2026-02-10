@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Спасибо за регистрацию — PWA Landing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+</head>
+<body class="thank-you-body">
+  <main class="thank-you-main">
+    <div class="card thank-you-card">
+      <h1>Спасибо! Заявка отправлена ✅</h1>
+      <p>Мы получили ваши данные и свяжемся с вами в ближайшее время.</p>
+
+      <div class="thank-you-details" id="thank-you-details">
+        <!-- сюда JS может подставить имя/email из localStorage -->
+      </div>
+
+      <a href="index.html" class="btn-secondary">Вернуться на главную</a>
+    </div>
+  </main>
+
+  <script>
+    // Читаем данные, сохранённые на главной
+    try {
+      const raw = localStorage.getItem('pwa-landing-registration');
+      if (raw) {
+        const data = JSON.parse(raw);
+        const container = document.getElementById('thank-you-details');
+        if (container) {
+          container.innerHTML = `
+            <p><strong>Имя:</strong> ${data.name || ''}</p>
+            <p><strong>Email:</strong> ${data.email || ''}</p>
+            ${data.phone ? `<p><strong>Телефон:</strong> ${data.phone}</p>` : ''}
+          `;
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  </script>
+</body>
+</html>
